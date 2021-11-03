@@ -425,10 +425,11 @@ func (socket *mongoSocket) Query(ops ...interface{}) (err error) {
 		ops = append(lops, ops...)
 	}
 
-	buf := bytesBufferPool.Get().([]byte)
-	defer func() {
-		bytesBufferPool.Put(buf[:0])
-	}()
+	// buf := bytesBufferPool.Get().([]byte)
+	// defer func() {
+	// 	bytesBufferPool.Put(buf[:0])
+	// }()
+	buf := make([]byte, 0, 256)
 
 	// Serialize operations synchronously to avoid interrupting
 	// other goroutines while we can't really be sending data.
