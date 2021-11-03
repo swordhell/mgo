@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 package main
@@ -12,7 +13,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/globalsign/mgo/internal/json"
+	"github.com/swordhell/mgo/internal/json"
 )
 
 func main() {
@@ -162,7 +163,7 @@ import (
 	"time"
 
 	. "gopkg.in/check.v1"
-    "github.com/globalsign/mgo/bson"
+    "github.com/swordhell/mgo/bson"
 )
 
 func testValid(c *C, in []byte, expected []byte, result interface{}) {
